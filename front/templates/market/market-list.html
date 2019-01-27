@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+    营销活动列表页 | 网点管理部
+{% endblock %}
+
+{% block content %}
+<section style="padding-bottom:50px">
+    <div class="wp butler_list_box list">
+        <div class='left'>
+                <div class="listoptions">
+                    <ul>
+                        <li>
+                            <h3>年&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp份</h3>
+                            <div class="cont">
+                                <a href="?ct={{ ct_ticket }}&city={{ city_id }}&status={{ status }}"><span
+                                        class="{% ifequal year '' %}active2{% endifequal %}">全部</span></a>
+
+                                <a href="?year=2018&ct={{ ct_ticket }}&city={{ city_id }}&status={{ status }}"><span
+                                        class="{% ifequal year '2018' %}active2{% endifequal %}">2018年</span></a>
+
+                            </div>
+                        </li>
+                        <li>
+                            <h3>活动票种</h3>
+                            <div class="cont">
+                                <a href="?city={{ city_id }}&year={{ year }}&status={{ status }}"><span
+                                        class="{% ifequal ct_ticket '' %}active2{% endifequal %}">全部</span></a>
+                                {% for key,name in all_tickets %}
+                                    <a href="?ct={{ key }}&city={{ city_id }}&year={{ year }}&status={{ status }}"><span
+                                            class="{% ifequal key ct_ticket %}active2{% endifequal %}">{{ name }}</span></a>
+                                {% endfor %}
+
+
+                            </div>
+                        </li>
+                        <li>
+                            <h3>所在地区</h3>
+                            <div class="cont">
+                                <a href="?ct={{ ct_ticket }}&year={{ year }}&status={{ status }}"><span
+                                        class="{% ifequal city_id '' %}active2{% endifequal %}">全部</span></a>
+                                {% for city in all_cities %}
+                                    <a href="?city={{ city.id }}&ct={{ ct_ticket }}&year={{ year }}&status={{ status }}"><span
+                                            class="{% ifequal city_id city.id|stringformat:'i' %}active2{% endifequal %}">{{ city.name }}</span></a>
+                                {% endfor %}
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="all">共<span class="key">{{ count }}</span>次</div>
+                <div class="butler_list company list">
+                    <div class="layout">
+                        <div class="head">
+                            <ul class="tab_header">
+                                <li><a class="{% ifequal status '' %}active2{% endifequal %}" href="?city={{ city_id }}&ct={{ ct_ticket }}&year={{ year }}">全部</a></li>
+                                <li><a class="{% ifequal status 'future' %}active2{% endifequal %}" href="?city={{ city_id }}&ct={{ ct_ticket }}&year={{ year }}&status=future">即将开展</a></li>
+                                <li><a class="{% ifequal status 'doing' %}active2{% endifequal %}" href="?status=doing&city={{ city_id }}&ct={{ ct_ticket }}&year={{ year }}">正在开展</a></li>
+                                <li><a class="{% ifequal status 'done' %}active2{% endifequal %}" href="?status=done&city={{ city_id }}&ct={{ ct_ticket }}&year={{ year }}">已完成</a></li>
+                            </ul>
+                        </div>
+                        {% for markets in page_markets.object_list %}
+                            <dl class="des difdes">
+                                <dt>
+                                    <a href="org-detail-homepage.html">
+                                        <img width="200" height="120" class="scrollLoading"
+                                             data-url="{{ MEDIA_URL }}{{ markets.image }}"/>
+                                    </a>
+                                </dt>
+                                <dd>
+                                    <div class="clearfix">
+                                        <a href="org-detail-homepage.html">
+                                            <h1>{{ markets.title }}</h1>
+                                            <div class="pic fl">
+
+                                                <img src="{% static 'images/authentication.png' %}"/>
+
+                                                <img src="{% static 'images/gold.png' %}"/>
+
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <ul class="cont">
+                                        <li class="first">
+                                            <p class="icon-kaishishijian iconfont">
+                                                开始时间：<span>{{ markets.start_date }}</span></p>
+                                            <p class="icon-jieshushijian iconfont">
+                                                结束时间：<span>{{ markets.end_date }}</span></p></li>
+                                        <li class="c8" style="padding-left:18px;">活动市州：{{ markets.city }}</li>
+                                        <li class="pic10" style="padding-left:18px;">标签：
+                                            {% for tag in markets.tag.all %}
+                                                <a href="/diary/19/">{{ tag.name }}</a>
+
+                                            {% endfor %}
+                                        </li>
+                                    </ul>
+                                </dd>
+                                <div class="buy start_groupbuy jsShowPerfect2" data-id="22"><br/>活动<br/>详情</div>
+                            </dl>
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="pageturn">
+                        <ul class="pagelist">
+                            {% if page_markets.has_previous %}
+                                <li class="long">
+                                    <a href="?{{ page_markets.previous_page_number.querystring }}">上一页</a>
+                                </li>
+                            {% endif %}
+                            {% for page in page_markets.pages %}
+                                {% if page %}
+                                    {% ifequal page page_markets.number %}
+                                        <li><span  class="active2">{{ page }}</span></li>
+                                    {% else %}
+                                        <li><a href="?{{ page.querystring }}">{{ page }}</a></li>
+                                    {% endifequal %}
+                                {% else %}
+                                    <li class="none">...</li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_markets.has_next %}
+                                <li class="long"><a href="?{{ page_markets.next_page_number.querystring }}">下一页</a>
+                                </li>
+                            {% endif %}
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div class="right" id="echarts" style="width: 280px;height:500px;">
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block custom_js %}
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('echarts'));
+    var option = {
+        title: {
+            text: '2019年度营销活动次数排名',
+            show: true,
+            padding:[20,5,20,5],
+            x:'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01],
+            splitLine: {show: false},
+            show: false
+        },
+        yAxis: {
+            type: 'category',
+            data: ['长沙', '湘潭', '株洲', '衡阳', '郴州', '常德', '益阳', '娄底', '邵阳', '岳阳', '永州', '怀化', '湘西', '张家界']
+
+        },
+        series: [
+            {
+                name: '2019年',
+                type: 'bar',
+                data: [10, 1, 5, 5, 9, 10, 1, 5, 5, 9, 10, 1, 5, 5],
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'inside'
+                    }
+                }
+            }
+
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+{% endblock %}

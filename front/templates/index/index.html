@@ -1,0 +1,624 @@
+{% extends 'base.html' %}
+
+{% block titile %}
+    首页 | 网点管理部
+{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="banner">
+            <div class="fl banner-group" id="banner-group">
+                <ul id="banner-ul" class="banner-ul">
+                    <li><a href="#"><img src="{% static 'images/login-bgm.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'images/logo.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'images/default.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'images/logo.png' %}" alt=""></a></li>
+                    <li><a href="#"><img src="{% static 'images/banner.jpg' %}" alt=""></a></li>
+                </ul>
+                <span class="arrow left-arrow"><i class="iconfont icon-jiantoushang-copy"></i></span>
+                <span class="arrow right-arrow"><i class="iconfont icon-jiantoushang"></i></span>
+                <div class="page-control-group">
+                    <ul class="page-control">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="module">
+            <div class="wp">
+                <div class="left">
+                    <img width="228" height="400" src="{% static 'images/module2_1.jpg' %}"/>
+                    <p class="fisrt_word">营销活动</p>
+                    <a class="more" href="course-list.html">更多营销活动 >></a>
+                </div>
+                <div class="right">
+                    <div class="todo clearfix">
+                        <ul>
+                            <li id="future">即将开展</li>
+                            <li class="active" id="doing">正在开展</li>
+                            <li id="done">已开展</li>
+                        </ul>
+                    </div>
+                    <div class='show'>
+                        <div class="future">
+                            <ul>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="doing" style="display: block">
+                            <ul>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="done">
+                            <ul>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <a href="course-detail.html">
+                                            <img width="220" height="190"
+                                                 src="../../dist/images/57035ff200014b8a06000338-240-135_dHfj8Nq.jpg"/>
+                                        </a>
+                                        <div class="des">
+                                            <a href="course-detail.html">
+                                                <h2 title="django入门">疯狂动物城</h2>
+                                            </a>
+                                            <span>开始时间：<i class="key">2018年1月1日</i></span>
+                                            <span>结束时间：<i class="key">2018年6月1日</i></span>
+                                        </div>
+                                        <div class="bottom">
+                                            <span title="慕课网">长沙</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="more-acitve"><a href="">查看更多</a></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="module1">
+            <div class="wp">
+                <div class="left">
+                    <img width="228" height="400" src="{% static 'images/module3_1.jpg' %}"/>
+                    <p class="fisrt_word">规范化建设</p>
+                    <a class="more" href="course-list.html">更多规范化建设 >></a>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>湘潭</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>长沙</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>湘西</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="org-detail-homepage.html">
+                                <div class="area-list">
+                                    <div class="score">
+                                        <div class="circle">
+                                            <h2>张家界</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="padding-bottom:50px">
+        <div class="module1">
+            <div class="wp">
+                <div class="left">
+                    <img width="228" height="400" src="{% static 'images/module6_1.jpg' %}"/>
+                    <p class="fisrt_word">增机布点</p>
+                    <a class="more" href="course-list.html">更多增机布点 >></a>
+                </div>
+                <div class="right" id="echarts" style="width: 950px;height:400px;">
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block custom_js %}
+    <script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('echarts'));
+    var option = {
+        title: {
+            text: '增机布点情况',
+            x: 'center'
+            //subtext: '纯属虚构'
+        },
+        tooltip: {
+            trigger: 'axis',
+            padding: 0,
+
+        },
+        legend: {
+            data: ['全省', '长沙', '湘潭', '株洲', '衡阳', '郴州',
+                '常德', '益阳', '娄底', '邵阳', '岳阳', '永州', '怀化', '湘西', '张家界'],
+            y: 370,
+            orient: 'horizontal', // 'vertical'
+            // 'center' | 'left' | {number},
+            padding: 5,    // [5, 10, 15, 20]
+            itemGap: 8,
+            itemWidth: 15,
+            selected: {
+                '长沙': false, '湘潭': false, '株洲': false, '衡阳': false, '郴州': false,
+                '常德': false, '益阳': false, '娄底': false, '邵阳': false, '岳阳': false, '永州': false,
+                '怀化': false, '湘西': false, '张家界': false
+            }
+
+        },
+        toolbox: {
+            show: true,
+            x: 800,
+            feature: {
+                mark: {show: true},
+                dataView: {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore: {show: true},
+                saveAsImage: {show: true}
+            }
+        },
+        xAxis: [
+            {
+                type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '全省',
+                type: 'bar',
+                data: [2.0, 4.9, 7.0, 23.2, 25.6, 376.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+
+            },
+            {
+                name: '长沙',
+                type: 'bar',
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 195.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '湘潭',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '株洲',
+                type: 'bar',
+                data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+
+            },
+            {
+                name: '衡阳',
+                type: 'bar',
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 195.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '郴州',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '常德',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '益阳',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '娄底',
+                type: 'bar',
+                data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 195.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '邵阳',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '岳阳',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '永州',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '怀化',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '湘西',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+            {
+                name: '张家界',
+                type: 'bar',
+                data: [1, 5.9, 9.0, 26.4, 228.7, 70.7, 125.6, 22.2, 28.7, 14.8, 5.0, 2],
+                markPoint: {
+                    data: [
+                        {type: 'max', name: '最大值'},
+                        {type: 'min', name: '最小值'}
+                    ]
+                }
+            },
+        ]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+{% endblock %}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/reset.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.min.css' %}">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_831718_yk499ns7suj.css">
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+</head>
+<body>
+<header>
+    <div class="header-wrapper">
+        <div class="header-box"><p class="fl">2018年10月13日 星期六</p>
+            <p class="fr">欢迎登录</p></div>
+    </div>
+</header>
+<main class="content">
+    <div class="fl banner-group" id="banner-group">
+        <ul id="banner-ul" class="banner-ul">
+            <li><img src="{% static 'images/login-bgm.png' %}" alt=""></li>
+            <li><img src="{% static 'images/logo.png' %}" alt=""></li>
+            <li><img src="{% static 'images/default.png' %}" alt=""></li>
+            <li><img src="{% static 'images/logo.png' %}" alt=""></li>
+            <li><img src="{% static 'images/banner.jpg' %}" alt=""></li>
+        </ul>
+        <span class="arrow left-arrow"><i class="iconfont icon-jiantoushang-copy"></i></span> <span
+            class="arrow right-arrow"><i class="iconfont icon-jiantoushang"></i></span>
+        <div class="page-control-group">
+            <ul class="page-control"></ul>
+        </div>
+    </div>
+    <div class="fl form-box"><h2>帐号登录</h2>
+        <form action="{% url 'login' %}" method="post" autocomplete="off" id="login_form">
+            {% csrf_token %}
+            <div class="form-group marb20 {% if login_form.errors.username %}errorput{% endif %} {% if user is None %}errorput{% endif %}">
+                <label>用&nbsp;户&nbsp;名</label>
+                <input name="username" value="{{ login_form.username.value | default_if_none:'' }}" id="account_l"
+                       type="text" placeholder="手机号/邮箱">
+            </div>
+            <div class="form-group marb20 {% if login_form.errors.password %}errorput{% endif %} {% if user is None %}errorput{% endif %}">
+                <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                <input name="password" id="password_l" value="{{ login_form.password.value | default_if_none:'' }}"
+                       type="password" placeholder="请输入您的密码">
+            </div>
+            <div class="form-group marb20 captcha1 {% if login_form.errors.captcha %}errorput{% endif %}">
+                <label>验&nbsp;证&nbsp;码</label>
+                {{ login_form.captcha }}
+            </div>
+            <div class="error" id="jsLoginTips">
+                {% for key,error in login_form.errors.items %}
+                    {{ error }}
+                {% endfor %}
+                {% if not login_form.errors.items %}{{ msg }}{% endif %}
+            </div>
+            <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即登录">
+
+        </form>
+        <p class="form-p" title="请联系系统管理员">没有帐号或<span>忘记密码</span>？</p></div>
+</main>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/banner.min.js' %}"></script>
+<script src="{% static 'js/login.min.js' %}">
+    $.ajaxSetup({
+        async: false
+    });
+</script>
+</body>
+</html>
